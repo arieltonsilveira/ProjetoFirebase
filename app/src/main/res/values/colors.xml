@@ -10,4 +10,10 @@
     <color name="orange">#FFB344</color>
     <color name="pink">#FB528B</color>
     <color name="pink_light">#F899B9</color>
+
+    <color name="roxo_escuro">#830AD1</color>
+    <color name="roxo_claro">#9B3BDA</color>
+    <color name="cinza_claro">#AFB3BF</color>
+    <color name="preto">#FF000000</color>
+    <color name="branco">#FFFFFFFF</color>
 </resources>

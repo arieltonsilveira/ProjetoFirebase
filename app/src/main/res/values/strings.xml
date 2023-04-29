@@ -4,4 +4,12 @@
     <string name="text_cadastro">Crie uma conta Clicando aqui</string>
     <string name="title_cadastro">Cadastre-se</string>
     <string name="bt_cadastrar">Cadastrar</string>
+
+    <string name="titulo_cadastro_produto">Casdastrar Produto</string>
+    <string name="text_produto_nome">Nome do Produto</string>
+    <string name="text_produto_valor_custo">Informe valor de custo</string>
+    <string name="text_produto_valor_venda">Informe valor de venda</string>
+    <string name="bt_cadastro_produto">Cadastrar Produto</string>
+
+    <string name="title_cadastro_venda">Criar Venda</string>
 </resources>
