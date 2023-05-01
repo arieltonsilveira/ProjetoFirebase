@@ -119,6 +119,22 @@
         tools:layout_editor_absoluteX="20dp" />
 
     <Button
+        android:id="@+id/bt_list_vendas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="268dp"
+        android:backgroundTint="@color/black"
+        android:padding="20dp"
+        android:text="@string/title_list_vendas"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/bt_produto_cadastro"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <Button
         android:id="@+id/bt_deslogar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -126,12 +142,12 @@
         android:layout_marginTop="268dp"
         android:backgroundTint="@color/black"
         android:padding="20dp"
-        android:text="Deslogar"
+        android:text="@string/bt_Deslogar"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/bt_produto_cadastro"
+        app:layout_constraintTop_toBottomOf="@+id/bt_list_vendas"
         tools:layout_editor_absoluteX="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

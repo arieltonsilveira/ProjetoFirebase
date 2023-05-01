@@ -4,6 +4,7 @@
     <string name="text_cadastro">Crie uma conta Clicando aqui</string>
     <string name="title_cadastro">Cadastre-se</string>
     <string name="bt_cadastrar">Cadastrar</string>
+    <string name="bt_Deslogar">Deslogar</string>
 
     <string name="titulo_cadastro_produto">Casdastrar Produto</string>
     <string name="text_produto_nome">Nome do Produto</string>
@@ -14,4 +15,7 @@
     <string name="title_cadastro_venda">Criar Venda</string>
     <string name="title_selecionar_produto">Selecione o produto</string>
     <string name="text_quantidade_produto">Informe a quantidade</string>
+
+    <string name="title_list_vendas">Listar vendas</string>
+
 </resources>

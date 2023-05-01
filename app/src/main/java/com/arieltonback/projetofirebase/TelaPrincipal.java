@@ -19,7 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 public class TelaPrincipal extends AppCompatActivity {
 
     private TextView nome_usuario, email_usuario;
-    private Button bt_deslogar, bt_cadastro_produto,  bt_cadastro_venda;
+    private Button bt_deslogar, bt_cadastro_produto,  bt_cadastro_venda, bt_list_vendas;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String usuarioID;
 
@@ -57,6 +57,14 @@ public class TelaPrincipal extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        bt_list_vendas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TelaPrincipal.this, ListaVendas.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -84,5 +92,6 @@ public class TelaPrincipal extends AppCompatActivity {
         bt_deslogar = findViewById(R.id.bt_deslogar);
         bt_cadastro_produto = findViewById(R.id.bt_produto_cadastro);
         bt_cadastro_venda = findViewById(R.id.bt_venda_cadastro);
+        bt_list_vendas = findViewById(R.id.bt_list_vendas);
     }
 }
