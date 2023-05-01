@@ -14,7 +14,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
@@ -25,7 +24,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class FormCadastro extends AppCompatActivity {
 
@@ -51,10 +49,8 @@ public class FormCadastro extends AppCompatActivity {
                 String senha = edit_senha.getText().toString();
 
                 if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
-                    Snackbar snackbar = Snackbar.make(view, mensagens[0], Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.WHITE);
-                    snackbar.setTextColor(Color.BLACK);
-                    snackbar.show();
+                    AlertSnackBar alerta = new  AlertSnackBar();
+                    alerta.alertaSnackBarUsuario(view, mensagens[0], false);
                 } else {
                     cadastrarUsuario(view);
                 }
@@ -72,10 +68,8 @@ public class FormCadastro extends AppCompatActivity {
 
                 if (task.isSuccessful()) {
                     salvarDadosUsuario();
-                    Snackbar snackbar = Snackbar.make(view, mensagens[1], Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.WHITE);
-                    snackbar.setTextColor(Color.BLACK);
-                    snackbar.show();
+                    AlertSnackBar alerta = new  AlertSnackBar();
+                    alerta.alertaSnackBarUsuario(view, mensagens[1], true);
                 } else {
                     String erro;
                     try {
@@ -91,10 +85,8 @@ public class FormCadastro extends AppCompatActivity {
                         erro = "Erro ao cadastrar usuario";
                     }
 
-                    Snackbar snackbar = Snackbar.make(view, erro, Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.WHITE);
-                    snackbar.setTextColor(Color.BLACK);
-                    snackbar.show();
+                    AlertSnackBar alerta = new  AlertSnackBar();
+                    alerta.alertaSnackBarUsuario(view, erro, false);
                 }
             }
         });

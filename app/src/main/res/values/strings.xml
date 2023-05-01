@@ -12,4 +12,6 @@
     <string name="bt_cadastro_produto">Cadastrar Produto</string>
 
     <string name="title_cadastro_venda">Criar Venda</string>
+    <string name="title_selecionar_produto">Selecione o produto</string>
+    <string name="text_quantidade_produto">Informe a quantidade</string>
 </resources>

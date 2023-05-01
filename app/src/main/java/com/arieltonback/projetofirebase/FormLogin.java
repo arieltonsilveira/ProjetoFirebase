@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -54,10 +52,8 @@ public class FormLogin extends AppCompatActivity {
                 String senha = edit_senha.getText().toString();
 
                 if (email.isEmpty() || senha.isEmpty()) {
-                    Snackbar snackbar = Snackbar.make(view, mensagens[0], Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.WHITE);
-                    snackbar.setTextColor(Color.BLACK);
-                    snackbar.show();
+                    AlertSnackBar alerta = new  AlertSnackBar();
+                    alerta.alertaSnackBarUsuario(view, mensagens[0], false);
                 } else {
                     AutenticarUsuario(view);
                 }
@@ -102,10 +98,8 @@ public class FormLogin extends AppCompatActivity {
                         erro = "erro ao efetuar o login";
                     }
 
-                    Snackbar snackbar = Snackbar.make(view, erro, Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.WHITE);
-                    snackbar.setTextColor(Color.BLACK);
-                    snackbar.show();
+                    AlertSnackBar alerta = new  AlertSnackBar();
+                    alerta.alertaSnackBarUsuario(view, erro, false);
                 }
             }
         });

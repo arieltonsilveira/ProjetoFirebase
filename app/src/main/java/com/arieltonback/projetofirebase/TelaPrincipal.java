@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -50,6 +49,14 @@ public class TelaPrincipal extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        bt_cadastro_venda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TelaPrincipal.this, FormVenda.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -76,6 +83,6 @@ public class TelaPrincipal extends AppCompatActivity {
         email_usuario = findViewById(R.id.textEmailUsuario);
         bt_deslogar = findViewById(R.id.bt_deslogar);
         bt_cadastro_produto = findViewById(R.id.bt_produto_cadastro);
-//        bt_cadastro_venda = findViewById(R.id.bt_venda_cadastro);
+        bt_cadastro_venda = findViewById(R.id.bt_venda_cadastro);
     }
 }
