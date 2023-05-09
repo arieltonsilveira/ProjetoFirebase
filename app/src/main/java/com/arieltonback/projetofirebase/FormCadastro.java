@@ -3,6 +3,7 @@ package com.arieltonback.projetofirebase;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -106,6 +107,7 @@ public class FormCadastro extends AppCompatActivity {
             @Override
             public void onSuccess(Void unused) {
                 Log.d("db", "sucesso ao salvar os dados");
+                TelaPrincipal();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -113,6 +115,12 @@ public class FormCadastro extends AppCompatActivity {
                 Log.d("db_error", "Erro ao salvar os dados");
             }
         });
+    }
+
+    private void TelaPrincipal() {
+        Intent intent = new Intent(FormCadastro.this, TelaPrincipal.class);
+        startActivity(intent);
+        finish();
     }
 
     private void iniciarComponents() {
