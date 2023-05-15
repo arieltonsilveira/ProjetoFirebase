@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -34,6 +35,13 @@ public class FormLogin extends AppCompatActivity {
 
         getSupportActionBar().hide();
         this.iniciarComponente();
+
+        SharedPreferences sharedPreferences1 = getSharedPreferences("login", MODE_PRIVATE);
+
+        if (sharedPreferences1.contains("email")) {
+            edit_email.setText(sharedPreferences1.getString("email", ""));
+            edit_senha.setText(sharedPreferences1.getString("senha", ""));
+        }
 
         text_tela_cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +90,16 @@ public class FormLogin extends AppCompatActivity {
 
                 if (task.isSuccessful()) {
                     progressBar.setVisibility(View.VISIBLE);
+
+                    String email = edit_email.getText().toString();
+                    String senha = edit_senha.getText().toString();
+
+                    SharedPreferences sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("email", email);
+                    editor.putString("senha", senha);
+
+                    editor.apply();
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
